@@ -1,137 +1,248 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="VNN-LIB is a new standard for the verification of Neural Networks" />
-        <meta name="author" content="Stefano Demarchi, Dario Guidotti" />
-        <title>VNNLIB.org</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body class="d-flex flex-column h-100">
-        <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">VNNLIB.org</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            <li class="nav-item"><a class="nav-link" href="standard.html">Standard</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Header-->
-            <header class="bg-dark py-5">
-                <div class="container px-5">
-                    <div class="row gx-5 align-items-center justify-content-center">
-                        <div class="col-lg-8 col-xl-7 col-xxl-6">
-                            <div class="my-5 text-center text-xl-start">
-                                <h1 class="display-5 fw-bolder text-white mb-2">Welcome to VNN-LIB!</h1>
-                                <p class="lead fw-normal text-white-50 mb-4">An international initiative whose aim is to encourage collaboration
-                                  and facilitate research and development in Verification of Neural Networks (VNN)</p>
-                                <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Learn More</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center"><img class="img-fluid rounded-3 my-5" src="assets/img/VNNLIB_960_540.png" alt="..." /></div>
-                    </div>
-                </div>
-            </header>
 
-            <!-- Features section-->
-            <section class="py-5" id="features">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5">
-                        <div class="col-lg-4 mb-5 mb-lg-0">
-                          <h2 class="fw-bolder mb-0">A standard for VNN benchmarks</h2>
-                        </div>
-                        <div class="col-lg-8">
-                            <div class="row gx-5 row-cols-1 row-cols-md-2">
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-bounding-box-circles"></i></div>
-                                    <h2 class="h5"><a class="label-link" href="https://onnx.ai/" target="_blank">ONNX</a></h2>
-                                    <p class="mb-0">ONNX is an open format built to represent machine learning models. ONNX defines a common set of
-                                      operators and a common file format to enable AI developers to use models with a variety of frameworks, tools,
-                                      runtimes, and compilers.</p>
-                                </div>
-                                <div class="col mb-5 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-card-text"></i></div>
-                                    <h2 class="h5"><a class="label-link" href="https://smtlib.cs.uiowa.edu/" target="_blank">SMT-LIB</a></h2>
-                                    <p class="mb-0">SMT-LIB is an international initiative aimed at facilitating research and development in Satisfiability
-                                      Modulo Theories (SMT).</p>
-                                </div>
-                                <div class="col mb-5 mb-md-0 h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-code-slash"></i></div>
-                                    <h2 class="h5"><a class="label-link" href="https://github.com/NeVerTools/CoCoNet" target="_blank">CoCoNet</a></h2>
-                                    <p class="mb-0">CoCoNet is a tool for construction and conversion of neural networks across different standards, written
-                                      in Python and relying on the pyNeVer API.</p>
-                                </div>
-                                <div class="col h-100">
-                                    <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-eyeglasses"></i></div>
-                                    <h2 class="h5"><a class="label-link" href="https://sites.google.com/view/vnn2021" target="_blank">VNN-COMP</a></h2>
-                                    <p class="mb-0">The Verification of Neural Networks Competition (VNN-COMP) aims to bring together researchers
-                                      interested in methods and tools providing guarantees about the behaviours of neural networks and systems built from them.</p>
-                                </div>
-                            </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="msvalidate.01" content="8A044F6B24E3A19810D766CAE2ACA17A" />
+    <meta name="description" content="VNN-LIB is an international standard for the verification of Neural Networks.">
+    <meta name="author" content="Navendu Pottekkat | Stefano Demarchi">
+    <meta name="keywords" content="VNNLIB, VNNCOMP, NeVer, NeVer 2, NeVerTools, CoCoNet, Neural Networks Verification">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/img/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>VNN-LIB</title>
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/img/favicons/favicon.ico">
+
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+        crossorigin="anonymous"></script>
+
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet">
+
+    <!-- Fonts CSS-->
+    <link rel="stylesheet" href="css/heading.css">
+    <link rel="stylesheet" href="css/body.css">
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
+        <div class="container"><a class="navbar-brand js-scroll-trigger" href="#page-top">Home Page</a>
+            <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
+                type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+					<li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#portfolio">Highlights</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#about">Standard</a>
+                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
+                            href="#team">Team</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <!-- Masthead Heading-->
+            <h1 class="masthead-heading mb-0">VNN-LIB</h1>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-caret-down"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Masthead Avatar Image<img class="masthead-avatar mb-5" src="assets/svg/neverlogo.svg" alt="NeVer Logo">
+            Masthead Subheading-->
+            <p class="pre-wrap masthead-subheading font-weight-light mb-0">The international benchmarks standard for the Verification of Neural Networks</p>
+        </div>
+    </header>
+
+	<!-- PROJECTS SECTION -->
+    <section class="page-section portfolio" id="portfolio">
+        <div class="container">
+            <!-- Portfolio Section Heading-->
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary mb-0 d-inline-block">Highlights</h2>
+            </div>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-code"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Portfolio Grid Items-->
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="./assets/img/logos/onnx_480_270.png" alt="onnx">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a target="_blank" href="https://onnx.ai">ONNX</a>
+                            </h4>
+                            <p class="card-text">
+                                <span class="badge badge-secondary">Networks</span>
+                              </br></br>An open format built to represent machine learning models.
+                            </p>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- Testimonial section
-            <div class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"Some inspirational quote"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                    <div class="fw-bold">
-                                        Tom Ato
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        CEO, Pomodoro
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="./assets/img/logos/smtlib_480_270.png" alt="smtlib">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a target="_blank" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a>
+                            </h4>
+                            <p class="card-text">
+                                <span class="badge badge-secondary">Properties</span>
+                              </br></br>An international initiative aimed at facilitating research
+                                and development in Satisfiability Modulo Theories (SMT).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="./assets/img/logos/CoCoNet_480_270.png" alt="CoCoNet">
+                        <div class="card-body">
+                            <h4 class="card-title">
+                                <a target="_blank" href="https://github.com/NeVerTools/CoCoNet">CoCoNet</a>
+                            </h4>
+                            <p class="card-text">
+                                <span class="badge badge-secondary">Tool</span>
+                              </br></br>A tool for construction and conversion of neural networks across different standards.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
-          -->
-        </main>
-        <!-- Footer-->
-        <footer class="bg-dark py-4 mt-auto">
-            <div class="container px-5">
-                <div class="text-center">
-                  <h5 class="text-white">Powered by AIMS-Lab</h5>
-                  <a target="_blank" href="http://www.aimslab.org">
-        			         <img class="img-footer" align="center" src="assets/svg/unige.svg" alt="UniGE">
-        					</a>
+        </div>
+    </section>
+
+    <section class="page-section bg-primary text-white mb-0" id="about">
+        <div class="container">
+            <!-- About Section Heading-->
+            <div class="text-center">
+                <h2 class="page-section-heading d-inline-block text-white">Standard</h2>
+            </div>
+            <!-- Icon Divider-->
+            <div class="divider-custom divider-light">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-random"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- About Section Content-->
+            <div class="text-center">
+              <embed src="assets/doc/standard.pdf" width="100%" height="900" type="application/pdf">
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="team">
+        <div class="container">
+            <!-- Contact Section Heading-->
+            <div class="text-center">
+                <h2 class="page-section-heading text-secondary d-inline-block mb-0">Team</h2>
+            </div>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-user"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Content-->
+			<div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/at.jpg" alt="..." />
+                        <h4>Armando Tacchella</h4>
+                        <p class="text-muted">Full Professor | UniGE</p>
+                    </div>
                 </div>
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; VNNLIB.org 2021 | Hosted with ❤ by <a href="https://github.com/" target="_blank">GitHub</a></div></div>
-                    <div class="col-auto">
-                        <a class="link-light small" target="_blank" href="https://github.com/VNNLIB/vnnlib.github.io/blob/master/LICENSE">License</a>
-                        <span class="text-white mx-1">&middot;</span>
-                        <a class="link-light small" href="mailto:vnnlib_at_unige.it">Contact</a>
+				        <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/lp.jpg" alt="..." />
+                        <h4>Luca Pulina</h4>
+                        <p class="text-muted">Full Professor | UniSS</p>
+                    </div>
+                </div>
+				        <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/dg.jpg" alt="..." />
+                        <h4>Dario Guidotti</h4>
+                        <p class="text-muted">Post-Doc Researcher | UniSS</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="assets/img/team/sd.jpg" alt="..." />
+                        <h4>Stefano Demarchi</h4>
+                        <p class="text-muted">PhD Student | UniGE</p>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+            <div class="row justify-content-center">
+                <div class="col-lg-4">
+                    <div class="d-flex flex-column align-items-center">
+                        <a href="mailto:nevertools_at_googlegroups.com"><div class="icon-contact mb-3"><i class="far fa-envelope"></i></div></a>
+                        <div class="text-muted">Email</div><a class="lead font-weight-bold"
+                            href="mailto:nevertools_at_googlegroups.com">nevertools _at_ googlegroups.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+	<footer class="footer text-center">
+		<div class="container">
+			 <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <h4 class="mb-4"></h4>
+                    <p class="pre-wrap lead mb-0"> </p>
+                </div>
+				<div class="col-lg-4 mb-5 mb-lg-0">
+                <h4 class="mb-4">Powered by AIMS-Lab</h4>
+					<a target="_blank" href="http://www.aimslab.org">
+						<img class="img-footer" src="assets/svg/unige.svg" alt="UniGE">
+					</a>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+    <!-- Copyright Section -->
+    <section class="copyright py-4 text-center text-white">
+        <div class="container"><small class="pre-wrap"><a target="_blank" href="https://github.com/NeVerTools/NeVerTools.github.io/blob/master/LICENSE">MIT Licensed</a> | vnnlib.org 2022 | Hosted with ❤ by <a href="https://github.com/" target="_blank">GitHub</a></small></div>
+    </section>
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-to-top d-lg-none position-fixed"><a
+            class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
+                class="fa fa-chevron-up"></i></a></div>
+
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS -->
+    <script src="js/scripts.js"></script>
+    <!-- GitHub buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+
 </html>
