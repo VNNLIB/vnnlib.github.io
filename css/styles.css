@@ -2364,7 +2364,7 @@ select.form-control[multiple], select.form-control[size], textarea.form-control 
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: transparent;
+    background-color: #fff;
     border: .125rem solid transparent;
     padding: .375rem .75rem;
     font-size: 1rem;
