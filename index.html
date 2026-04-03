@@ -234,7 +234,7 @@
             <div class="text-center left-header">
                 <h2 class="page-section-heading mb-0 d-inline-block">Libraries</h2>
                 <div class="space-between">
-                    <p> The following official libraries are available for interacting with the VNN-LIB standard.</p>
+                    <p> The following official libraries are available for interacting with the VNN-LIB standard in a variety of languages.</p>
                 </div>
             </div>
             <!-- Portfolio Grid Items-->
@@ -247,11 +247,13 @@
                             </h4>
                             <p class="card-text">
                                 <span class="badge badge-secondary">Parser</span>
-                                </br>
-                                </br>A C++ library for parsing VNN-LIB query files.
                                 <br>
                                 <br>
-                                Functionality includes the generation of an AST from a VNN-LIB query, and utilities to transform the AST into other formats.
+                                Provides:
+                                <ul>
+                                    <li> Parsing </li>
+                                    <li> Type-checking </li>
+                                </ul>
                             </p>
                         </div>
                     </div>
@@ -265,10 +267,13 @@
                             <p class="card-text">
                                 <span class="badge badge-secondary">Parser</span>
                                 </br>
-                                </br>A Python library for parsing VNN-LIB query files.
-                                <br>
-                                <br>
-                                This package is implemented via Python bindings to the C++ parser.
+                                </br>Provides:
+                                <ul>
+                                    <li> Parsing </li>
+                                    <li> Type-checking </li>
+                                    <li> Conversion to legacy formats </li>
+                                </ul>
+                                <p> Implemented as bindings to the C++ library. </p>
                             </p>
                         </div>
                     </div>
@@ -282,10 +287,12 @@
                             <p class="card-text">
                                 <span class="badge badge-secondary">Parser</span>
                                 </br>
-                                </br>A Julia library for parsing VNN-LIB query files.
-                                <br>
-                                <br>
-                                This package is implemented via Julia bindings to the C++ parser.
+                                </br>Provides:
+                                <ul>
+                                    <li> Parsing </li>
+                                    <li> Type-checking </li>
+                                </ul>
+                                <p> Implemented as bindings to the C++ library. </p>
                             </p>
                         </div>
                     </div>
@@ -301,14 +308,19 @@
                                 <span class="badge badge-secondary">Semantics</span>
                                 </br>
                                 </br>
-                                An Agda library for parsing VNN-LIB query files. 
-                                <br>
-                                <br>
-                                The library also contains a mechanised formal semantics of VNN-LIB queries.
+                                Provides:
+                                <ul>
+                                    <li> Parsing </li>
+                                    <li> Type-checking </li>
+                                    <li> Formal semantics </li>
+                                </ul>
                             </p>
                         </div>
                     </div>
                 </div>
+                </div>
+                <div class="space-between text-center">
+                    <p> We welcome ports to further languages!</p>
                 </div>
             </div>
         </div>
