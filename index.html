@@ -87,7 +87,7 @@
                         <div class="space-between">
                             <p> 
                                 VNN-LIB is an open-source standard for automated solvers of satisfiability problems over neural networks. 
-                                The goal of the standard is to foster greater robustness and interoperability in the neural network verification landscape. 
+                                The goal of the standard is to foster interoperability in the neural network verification community. 
                                 To this end, the standard defines:                                
                             </p>
                             <ol>
@@ -95,6 +95,11 @@
                                 <li>A formal semantics for that syntax.</li>
                                 <li>A command-line interface for solvers.</li>
                             </ol>
+                            <p>
+                                Contributions and suggestions to the standard are welcome! 
+                                If interested, please open an Issue describing your proposal on the 
+                                <a target="_blank" href="https://github.com/VNNLIB/VNNLIB-Standard/issues">GitHub repo</a>.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -111,7 +116,7 @@
 )
 
 ; Input constraints
-(assert (and (>= X[1,0] 0.0) (<= X[0,0] 1.0)))
+(assert (and (>= X[0,0] 0.0) (<= X[0,0] 1.0)))
 (assert (and (>= X[0,1] 0.0) (<= X[0,1] 1.0)))
 (assert (and (>= X[1,0] 0.0) (<= X[1,0] 1.0)))
 (assert (and (>= X[1,1] 0.0) (<= X[1,1] 1.0)))
@@ -325,55 +330,26 @@
                     <div class="card h-100">
                         <div class="card-body">
                             <h4 class="card-title">
+                                <a target="_blank" href="https://vnn-comp.github.io/">VNN-COMP</a>
+                            </h4>
+                            <p class="card-text">
+                                <span class="badge badge-secondary">Competiton</span>
+                              </br></br>The annual neural network verification competition.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">
                                 <a target="_blank" href="https://onnx.ai">ONNX</a>
                             </h4>
                             <p class="card-text">
-                                <span class="badge badge-secondary">Networks</span>
+                                <span class="badge badge-secondary">Network models</span>
                                 </br>
                                 </br>
-                                An open format built to represent machine learning models.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://smtlib.cs.uiowa.edu/">SMT-LIB</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Properties</span>
-                                <span class="badge badge-secondary">version 1.0</span>
-                              </br></br>An international initiative aimed at facilitating research
-                                and development in Satisfiability Modulo Theories (SMT).
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://github.com/NeVerTools/CoCoNet">CoCoNet</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Tool</span>
-                              </br></br>A tool for construction and conversion of neural networks across different standards.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://github.com/ChristopherBrix/vnncomp2023_benchmarks">VNN-COMP 2023</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Benchmarks</span>
-                                <span class="badge badge-secondary">version 1.0</span>
-                              </br></br>The benchmarks repository of the VNN competition - 2023.
+                                The standard format for representing machine learning models that VNN-LIB relies on.
                             </p>
                         </div>
                     </div>
