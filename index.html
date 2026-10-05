@@ -4,113 +4,52 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="msvalidate.01" content="8A044F6B24E3A19810D766CAE2ACA17A" />
-    <meta name="description" content="VNN-LIB is an international standard for the verification of Neural Networks.">
-    <meta name="author" content="Stefano Demarchi">
-    <meta name="keywords" content="VNNLIB, VNNCOMP, NeVer, NeVer 2, NeVerTools, CoCoNet, Neural Networks Verification">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="msapplication-config" content="./assets/img/favicons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="VNN-LIB is an international standard for neural network verification.">
     <title>VNN-LIB</title>
-
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicons/favicon-16x16.png">
-    <link rel="manifest" href="./assets/img/favicons/site.webmanifest">
-    <link rel="mask-icon" href="./assets/img/favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <link rel="shortcut icon" href="./assets/img/favicons/favicon.ico">
-
-    <!-- Font Awesome icons (free version)-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
         crossorigin="anonymous"></script>
-
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet">
-
-    <!-- Fonts CSS-->
-    <link rel="stylesheet" href="css/heading.css">
-    <link rel="stylesheet" href="css/body.css">
-
-    <!-- Slide Canvas Block CSS -->
-    <link rel="stylesheet" href="css/canvas.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/internal-style.css">
-    <link rel="stylesheet" href="css/progress-stepper.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
-<body id="page-top">
+<body class="solver-page page-home">
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <!-- Masthead Heading-->
-            <h1 class="masthead-heading mb-0">VNN-LIB</h1>
+            <a class="navbar-brand" href="index.html">
+                <h1 class="masthead-heading mb-0">VNN-LIB</h1>
             </a>
             <button class="navbar-toggler navbar-toggler-right font-weight-bold bg-primary text-white rounded"
                 type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
-                aria-expanded="false" afria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+                aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#news">News</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#standard">Standard</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded"
-                            href="solvers.html">Solvers</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#libraries">Libraries</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#related">Related</a>
-                    </li>
-                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded js-scroll-trigger"
-                            href="#team">Team</a>
-                    </li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded active" href="index.html">Home</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="standards.html">Documents</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="solvers.html">Solvers</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="libraries.html">Libraries</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="related.html">Related Tools</a></li>
                 </ul>
             </div>
         </div>
     </nav>
-    <header class="masthead bg-gradient text-white text-center">
-        <div class="container d-flex align-items-center flex-column">
-            <h1 class="pre-wrap masthead-heading font-weight-bold mb-0"> The International Standard for the Verification of Neural Networks </h1>
-        </div>
-    </header>
 
-    <!-- About -->
-    <section class="page-section padding-sm" id="About">
+    <header class="masthead site-hero visual-hero visual-hero-home text-white">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-sm-6 mb-4">
-                    <div class="card-body">
-                        <h2 class="page-section-heading mb-0 d-inline-block">Introduction</h2>
-                        <div class="space-between">
-                            <p> 
-                                VNN-LIB is an open-source standard for automated solvers of satisfiability problems over neural networks. 
-                                The goal of the standard is to foster interoperability in the neural network verification community. 
-                                To this end, the standard defines:                                
-                            </p>
-                            <ol>
-                                <li>A formal syntax for defining satisfiability queries.</li>
-                                <li>A formal semantics for that syntax.</li>
-                                <li>A command-line interface for solvers.</li>
-                            </ol>
-                            <p>
-                                Contributions and suggestions to the standard are welcome! 
-                                If interested, please open an Issue describing your proposal on the 
-                                <a target="_blank" href="https://github.com/VNNLIB/VNNLIB-Standard/issues">GitHub repo</a>.
-                            </p>
-                        </div>
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <p class="eyebrow hero-standard">International standard for neural network verification</p>
+                    <h1 class="display-title">VNN-LIB</h1>
+                    <p class="lead hero-copy">
+                        The International Standard for the Verification of Neural Networks
+                    </p>
+                    <div class="hero-actions">
+                        <a class="btn hero-cta hero-cta-primary" href="standards.html">Read the Standard</a>
+                        <a class="btn hero-cta hero-cta-secondary" href="solvers.html">Find a Solver</a>
                     </div>
                 </div>
-
-                <div class="card-body">
-                    <div class="bg-code">
-                        <pre>
-(vnnlib-version <2.0>)
+                <div class="col-lg-5">
+                    <div class="code-panel" aria-label="VNN-LIB example">
+                        <pre>(vnnlib-version &lt;2.0&gt;)
 
 ; Network declaration
 (declare-network f
@@ -119,393 +58,182 @@
 )
 
 ; Input constraints
-(assert (and (>= X[0,0] 0.0) (<= X[0,0] 1.0)))
-(assert (and (>= X[0,1] 0.0) (<= X[0,1] 1.0)))
-(assert (and (>= X[1,0] 0.0) (<= X[1,0] 1.0)))
-(assert (and (>= X[1,1] 0.0) (<= X[1,1] 1.0)))
+(assert (and (&gt;= X[0,0] 0.0) (&lt;= X[0,0] 1.0)))
+(assert (and (&gt;= X[0,1] 0.0) (&lt;= X[0,1] 1.0)))
+(assert (and (&gt;= X[1,0] 0.0) (&lt;= X[1,0] 1.0)))
+(assert (and (&gt;= X[1,1] 0.0) (&lt;= X[1,1] 1.0)))
 
 ; Output constraints
-(assert (or (<= Y[0] -3.0) (>= Y[0] 0.0)))</pre>
-                    </div>
-                </div>
-            </div>
-             
-        </div>
-    </section>
-
-    <section class="page-section" id="news">
-        <div class="container">
-            <div class="row">
-                <!-- News -->
-                <div class="col-lg-6 col-sm-6 mb-4 bg-primary-light">
-                    <!-- Portfolio Section Heading-->
-                    <div class="card-body">
-                        <div class="text-center">
-                            <h2 class="page-section-heading mb-0 d-inline-block">Latest News</h2>
-                        </div>
-                        <div class="space-between">
-                            <ul class="vertical-progress-stepper">
-                                <li> <b>December 15th 2025</b><br>VNN-LIB 2.0 released </li>
-                                <li> <b>December 15th 2025</b><br>VNNLIB-Python 1.0.0 released </li>
-                                <li> <b>December 15th 2025</b><br>VNNLIB-CPP 1.0.0 released </li>
-                                <li> <b>December 15th 2025</b><br>VNNLIB-Agda 1.0.0 released </li>
-                                <li> <b>November 11th 2022</b><br>VNN-LIB 1.0 released</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- Solvers -->
-                <div class="col-lg-6 col-sm-6 mb-4">
-                    <!-- Portfolio Section Heading-->
-                    <div class="card-body">
-                        <div class="text-center">
-                            <h2 class="page-section-heading mb-0 d-inline-block">Solvers</h2>
-                        </div>
-                        <div class="space-between">
-                            <p> 
-                                Solvers that are known to support VNN-LIB. The new solver database records versioned
-                                capabilities from the VNN-LIB 2.0 <code>supports</code> interface and lets users find
-                                compatible solvers by feature.
-                            </p>
-
-                            <table class="table-basic">
-                                <tr>
-                                    <th> Name </th>
-                                    <th> VNN-LIB Version </th>
-                                </tr>
-                                <tr>
-                                    <td> <a target="_blank" href="https://github.com/NeuralNetworkVerification/Marabou">Marabou</a> </td>
-                                    <td> 1.0 </td>
-                                </tr>
-                                <tr>
-                                    <td> <a target="_blank" href="https://github.com/verivital/nnv">NNV</a> </td>
-                                    <td> 1.0 </td>
-                                </tr>
-                                <tr>
-                                    <td> <a target="_blank" href="https://pyrat-analyzer.com/">Pyrat</a> </td>
-                                    <td> 1.0 </td>
-                                </tr>
-                            </table>
-                            <p>
-                                <a class="btn btn-primary" href="solvers.html">Search solver capabilities</a>
-                            </p>
-                            <p>To add a solver to this list, please open a <a href="https://github.com/VNNLIB/vnnlib.github.io">pull request</a>.</p>
-                        </div>
+(assert (or (&lt;= Y[0] -3.0) (&gt;= Y[0] 0.0)))</pre>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Standard -->
-    <section class="page-section bg-primary-light" id="standard">
-        <div class="container">
-            <!-- Portfolio Section Heading-->
-            <div class="text-center">
-                <h2 class="page-section-heading mb-0 d-inline-block">Documents</h2>
-            </div>
-            <div class="space-between">
-                <p> Released versions of the VNN-LIB standard.</p>
-
-                <!-- Portfolio Items-->
-                <div class="align-items-center justify-content-center">
-                    <table class="table-basic">
-                        <tr>
-                            <th>Document</th>
-                            <th>Release date</th>
-                        </tr>
-                        <tr> 
-                            <td> <a target="_blank" href="https://github.com/VNNLIB/VNNLIB-Standard/releases/download/v2.0.0/standard.pdf"> VNN-LIB 2.0 </a> </td>
-                            <td> December 15th 2025 </td>
-                        </tr>
-                        <tr> 
-                            <td> <a target="_blank" href="https://github.com/VNNLIB/VNNLIB-Standard/releases/download/v1.0/standard.pdf"> VNN-LIB 1.0 </a> </td>
-                            <td> November 11th 2022 </td>
-                        </tr>
-                    </table>
-                </div>
-                <br>
-                <p> 
-                    Citing the standard:
-					<li class="indented">
-                        Version 2.0 - <i>VNN-LIB 2.0: Rigorous Foundations for Neural Network Verification</i> A. Roy, A. Antony, A. Gimelli, and M.L. Daggitt, CAV 2026: 
-                    </li>
-                    <li class="indented">
-                        Version 1.0 - <i>Supporting Standardization of Neural Networks Verification with VNN-LIB and CoCoNet</i> S. Demarchi, D. Guidotti, L. Pulina and A. Tacchella, FoMLAS 2023
-                    </li>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Libraries -->
-    <section class="page-section" id="libraries">
-        <div class="container">
-            <!-- Portfolio Section Heading-->
-            <div class="text-center left-header">
-                <h2 class="page-section-heading mb-0 d-inline-block">Libraries</h2>
-                <div class="space-between">
-                    <p> The following official libraries are available for interacting with the VNN-LIB standard in a variety of languages.</p>
+    <main>
+        <section class="page-section home-intro-section">
+            <div class="container">
+                <div class="home-intro-panel">
+                    <div class="home-intro-copy">
+                        <p class="eyebrow">Introduction</p>
+                        <h2>What VNN-LIB Provides</h2>
+                        <p class="lead-copy">
+                            VNN-LIB is an open-source standard for automated solvers of
+                            satisfiability problems over neural networks. The goal of the standard is
+                            to foster interoperability in the neural network verification community.
+                        </p>
+                        <p class="lead-copy">
+                            Contributions and suggestions to the standard are welcome. If interested,
+                            please open an issue describing your proposal on the
+                            <a target="_blank" rel="noopener" href="https://github.com/VNNLIB/VNNLIB-Standard/issues">VNN-LIB Standard GitHub repository</a>.
+                        </p>
+                    </div>
+                    <div class="intro-definition-grid" aria-label="VNN-LIB standard definitions">
+                        <article class="intro-definition-card">
+                            <span>01</span>
+                            <h3>Formal syntax</h3>
+                            <p>Defines satisfiability queries in a shared, machine-readable format.</p>
+                        </article>
+                        <article class="intro-definition-card">
+                            <span>02</span>
+                            <h3>Formal semantics</h3>
+                            <p>Gives precise meaning to each query so tools interpret problems consistently.</p>
+                        </article>
+                        <article class="intro-definition-card">
+                            <span>03</span>
+                            <h3>Solver interface</h3>
+                            <p>Specifies a command-line interface for exchanging queries with solvers.</p>
+                        </article>
+                    </div>
                 </div>
             </div>
-            <!-- Portfolio Grid Items-->
-            <div class="row">
-                <div class="col-lg-4 col-sm-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://github.com/VNNLIB/VNNLIB-CPP">C++</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Parser</span>
-                                <span class="badge badge-secondary">Type-checker</span>
-                            </p>
+        </section>
+
+        <section class="page-section section-muted news-section">
+            <div class="container">
+                <div class="news-layout">
+                    <div class="news-heading">
+                        <div>
+                            <p class="eyebrow">Latest News</p>
+                            <h2>Project Updates</h2>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-sm-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://github.com/VNNLIB/VNNLIB-Python">Python</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Parser</span>
-                                <span class="badge badge-secondary">Type-checker</span>
-                            </p>
+                    <div class="news-feed">
+                        <div class="timeline-list">
+                            <div class="timeline-item">
+                                <strong>June 2, 2026</strong>
+                                <span>
+                                    <a target="_blank" rel="noopener" href="https://github.com/VNNLIB/VNNLIB-Python/releases/tag/v1.0.2">VNNLIB-Python 1.0.2</a>
+                                    and
+                                    <a target="_blank" rel="noopener" href="https://github.com/VNNLIB/VNNLIB-CPP/releases/tag/v1.0.1">VNNLIB-CPP 1.0.1</a>
+                                    released
+                                </span>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>May 25, 2026</strong>
+                                <span>
+                                    <a target="_blank" rel="noopener" href="https://github.com/VNNLIB/VNNLIB-Agda/releases/tag/v1.1.1">VNNLIB-Agda 1.1.1</a>
+                                    released
+                                </span>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>December 15, 2025</strong>
+                                <span>
+                                    <a target="_blank" rel="noopener" href="https://github.com/VNNLIB/VNNLIB-Standard/releases/tag/v2.0.0">VNN-LIB 2.0 standard</a>
+                                    released, alongside VNNLIB-Python, VNNLIB-CPP, and VNNLIB-Agda 1.0.0
+                                </span>
+                            </div>
+                            <div class="timeline-item">
+                                <strong>September 27, 2025</strong>
+                                <span>
+                                    <a target="_blank" rel="noopener" href="https://github.com/VNNLIB/VNNLIB-Standard/releases/tag/v1.0">VNN-LIB 1.0 standard</a>
+                                    released
+                                </span>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://github.com/VNNLIB/VNNLIB.jl">Julia</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Parser</span>
-                                <span class="badge badge-secondary">Type-checker</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-sm-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://git.frama-c.com/pub/vnnlib">OCaml</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Parser</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>   
-                <div class="col-lg-4 col-sm-4 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://github.com/VNNLIB/VNNLIB-Agda">Agda</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Parser</span>
-                                <span class="badge badge-secondary">Type-checker</span>
-                                <span class="badge badge-secondary">Semantics</span>
-                            </p>
-                        </div>
+                        <p class="timeline-more">
+                            See every release on
+                            <a target="_blank" rel="noopener" href="https://github.com/orgs/VNNLIB/repositories">GitHub</a>.
+                        </p>
                     </div>
                 </div>
             </div>
-            <div class="space-between text-center">
-                <p> We welcome PRs to these libraries and ports to further languages!</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- PROJECTS SECTION -->
-    <section class="page-section mb-0 portfolio bg-primary-light" id="related">
-        <div class="container">
-            <div class="row">
-                <!-- Portfolio Section Heading-->
-                <div class="col-lg-4 col-sm-6 mb-4 text-center space-between">
-                    <h2 class="page-section-heading text-secondary-inline-block">Related</h2>
-                    <div class="space-between">
-                        <p class="text-secondary">Projects that are referenced to in both historically and currently in the development of the VNN-LIB standard.</p>
-                    </div>
+        <section class="page-section section-muted team-section">
+            <div class="container">
+                <div class="section-heading team-heading">
+                    <p class="eyebrow">Team Members</p>
+                    <h2>People Behind VNN-LIB</h2>
                 </div>
-                <!-- Portfolio Grid Items-->
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://vnn-comp.github.io/">VNN-COMP</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Competiton</span>
-                              </br></br>The annual neural network verification competition.
-                            </p>
-                        </div>
-                    </div>
+                <div class="section-heading team-subheading">
+                    <h2>Current Team</h2>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://onnx.ai">ONNX</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Network models</span>
-                                </br>
-                                </br>
-                                The standard format for representing machine learning models that VNN-LIB relies on.
-                            </p>
-                        </div>
-                    </div>
+                <div class="team-grid">
+                    <article class="team-card">
+                        <img src="assets/img/team/md.jpg" alt="Matthew Daggitt">
+                        <h3>Matthew Daggitt</h3>
+                        <p>Lecturer | University of Western Australia</p>
+                    </article>
+                    <article class="team-card">
+                        <img src="assets/img/team/aa.jpg" alt="Allen Anthony">
+                        <h3>Allen Anthony</h3>
+                        <p>Postgraduate Researcher | University of Western Australia</p>
+                    </article>
+                    <article class="team-card">
+                        <img src="assets/img/team/ar.jpg" alt="Ann Roy">
+                        <h3>Ann Roy</h3>
+                        <p>Postgraduate Researcher | University of Western Australia</p>
+                    </article>
+                    <article class="team-card">
+                        <img src="assets/img/team/placeholder.png" alt="Andrea Gimelli">
+                        <h3>Andrea Gimelli</h3>
+                        <p>PhD Student | University of Genoa</p>
+                    </article>
+                    <article class="team-card">
+                        <img src="assets/img/team/at.jpg" alt="Armando Tacchella">
+                        <h3>Armando Tacchella</h3>
+                        <p>Full Professor | University of Genoa</p>
+                    </article>
                 </div>
-                <div class="col-lg-4 col-sm-6 mb-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <a target="_blank" href="https://github.com/vnnlib/benchmarks">Benchmarks</a>
-                            </h4>
-                            <p class="card-text">
-                                <span class="badge badge-secondary">Benchmarks</span>
-                                <span class="badge badge-secondary">version 1.0</span>
-                            </br></br>Our benchmarks repository from current research case studies.
-                            </p>
-                        </div>
-                    </div>
+                <div class="section-heading team-subheading">
+                    <h2>Past Members</h2>
+                </div>
+                <div class="team-grid team-grid-compact">
+                    <article class="team-card">
+                        <img src="assets/img/team/sd.jpg" alt="Stefano Demarchi">
+                        <h3>Stefano Demarchi</h3>
+                        <p>Postdoctoral Researcher | University of Genoa</p>
+                    </article>
+                    <article class="team-card">
+                        <img src="assets/img/team/lp.jpg" alt="Luca Pulina">
+                        <h3>Luca Pulina</h3>
+                        <p>Full Professor | University of Sassari</p>
+                    </article>
+                    <article class="team-card">
+                        <img src="assets/img/team/dg.jpg" alt="Dario Guidotti">
+                        <h3>Dario Guidotti</h3>
+                        <p>Postdoctoral Researcher | University of Sassari</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="page-section" id="team">
-        <div class="container">
-            <!-- Main heading + contact icons -->
-            <div class="row mb-4">
-                <div class="col-12 text-center">
-                    <h2 class="page-section-heading mb-0 d-inline-block">Team</h2>
-                    <br>
-                    <a class="lead font-weight-bold" target="_blank" href="https://github.com/VNNLIB"><i class="fab fa-github"></i></a>
-                    <a class="lead font-weight-bold" href="mailto:matthew.daggitt@uwa.edu.au"><i class="far fa-envelope"></i></a>
-                </div>
-            </div>
-
-            <!-- Current Team -->
-            <div class="row">
-                <div class="col-12 text-center">
-                    <h3 class="mb-0 d-inline-block">Current Members</h3>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-                <div class="col-sm-6 col-md-4 col-lg mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/md.jpg" alt="Matthew Daggitt" />
-                        <h4>Matthew Daggitt</h4>
-                        <p class="text-muted">Lecturer | University of Western Australia</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/aa.jpg" alt="Allen Anthony" />
-                        <h4>Allen Anthony</h4>
-                        <p class="text-muted"> Post-Grad | University of Western Australia</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 col-lg mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/ar.jpg" alt="Ann Roy" />
-                        <h4>Ann Roy</h4>
-                        <p class="text-muted"> Post-Grad | University of Western Australia</p>
-                    </div>
-                </div>
-
-
-                <div class="col-sm-6 col-md-4 col-lg mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/placeholder.png" alt="Andrea Gimelli" />
-                        <h4>Andrea Gimelli</h4>
-                        <p class="text-muted">PhD Student | UniGE</p>
-                    </div>
-                </div>
-                
-                <div class="col-sm-6 col-md-4 col-lg mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/at.jpg" alt="Armando Tacchella" />
-                        <h4>Armando<br>Tacchella</h4>
-                        <p class="text-muted">Full Professor | UniGE</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Past Team -->
-            <div class="row mt-4">
-                <div class="col-12 text-center">
-                    <h3 class="mb-0 d-inline-block">Past Members</h3>
-                </div>
-            </div>
-
-            <div class="row mt-3">
-
-                <div class="col-sm-6 col-md-4 mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/sd.jpg" alt="Stefano Demarchi" />
-                        <h4>Stefano Demarchi</h4>
-                        <p class="text-muted">Post-Doc Researcher | UniGE</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/lp.jpg" alt="Luca Pulina" />
-                        <h4>Luca Pulina</h4>
-                        <p class="text-muted">Full Professor | UniSS</p>
-                    </div>
-                </div>
-
-                <div class="col-sm-6 col-md-4 mb-4">
-                    <div class="team-member text-center">
-                        <img class="mx-auto rounded-circle img-thumbnail" src="assets/img/team/dg.jpg" alt="Dario Guidotti" />
-                        <h4>Dario Guidotti</h4>
-                        <p class="text-muted">Post-Doc Researcher | UniSS</p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Copyright Section -->
     <footer class="copyright footer py-4 text-center text-white bg-secondary">
         <div class="container">
-            <p>Powered by AIMS-Lab 
-                <a target="_blank">
-				    <img class="img-footer" src="assets/svg/unige.svg" alt="UniGE">
-			    </a>
+            <p>Powered by AIMS-Lab
+                <a target="_blank" rel="noopener" href="https://aims-lab.github.io/">
+                    <img class="img-footer" src="assets/svg/unige.svg" alt="UniGE">
+                </a>
             </p>
-            <small class="pre-wrap"><a target="_blank" href="https://github.com/NeVerTools/NeVerTools.github.io/blob/master/LICENSE">MIT Licensed</a> | vnnlib.org 2023 | Hosted with ❤ by <a href="https://github.com/" target="_blank">GitHub</a></small></div>
+            <small class="pre-wrap"><a target="_blank" rel="noopener" href="https://github.com/NeVerTools/NeVerTools.github.io/blob/master/LICENSE">MIT Licensed</a> | vnnlib.org 2023 | Hosted by <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a></small>
+        </div>
     </footer>
-    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
-    <div class="scroll-to-top d-lg-none position-fixed"><a
-            class="js-scroll-trigger d-block text-center text-white rounded" href="#page-top"><i
-                class="fa fa-chevron-up"></i></a></div>
 
-
-    <!-- Bootstrap core JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <!-- Core theme JS -->
-    <script src="js/scripts.js"></script>
-    <!-- GitHub buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <!-- Slide viewer JS -->
-    <script src="js/pdfviewer.js"></script>
 </body>
 
 </html>
