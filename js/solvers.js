@@ -1,10 +1,7 @@
 (function () {
     "use strict";
 
-    var DATA_SOURCES = [
-        "https://12er90.pythonanywhere.com/solvers",
-        "data/solvers.json"
-    ];
+    var DATA_SOURCE = "https://12er90.pythonanywhere.com/solvers";
 
     var THEORY_FIELDS = [
         "hidden_nodes",
@@ -732,21 +729,12 @@
     }
 
     function loadData() {
-        var attempt = function (index) {
-            return fetch(DATA_SOURCES[index]).then(function (response) {
-                if (!response.ok) {
-                    throw new Error("HTTP " + response.status);
-                }
-                return response.json();
-            }).catch(function (error) {
-                if (index + 1 < DATA_SOURCES.length) {
-                    return attempt(index + 1);
-                }
-                throw error;
-            });
-        };
-
-        attempt(0).then(function (data) {
+        fetch(DATA_SOURCE).then(function (response) {
+            if (!response.ok) {
+                throw new Error("HTTP " + response.status);
+            }
+            return response.json();
+        }).then(function (data) {
             if (Array.isArray(data)) {
                 data = { solvers: data };
             }

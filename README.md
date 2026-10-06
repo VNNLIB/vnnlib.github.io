@@ -12,12 +12,13 @@ multiple pages:
 - `related.html` for related tools
 
 All pages share `css/site.css` so the prototype presents as one consistent
-site. The Solvers page first requests `https://12er90.pythonanywhere.com/solvers`
-and falls back to `data/solvers.json`. It shows matching solver releases in a
-table and can be served as a static site.
+site. The Solvers page loads data exclusively from
+`https://12er90.pythonanywhere.com/solvers`. It shows matching solver releases
+in a table and can be served as a static site. There is no local data fallback;
+if the API request fails, the page displays a loading error.
 
-The current Solvers page filters in the browser so it can be developed and
-reviewed without a deployed server. The intended production integration is to
+The current Solvers page filters in the browser and requires access to the
+external data API, including during local development. The intended production integration is to
 query the web API that wraps the Python compatibility package, while keeping
 the same filter fields and result structure.
 
@@ -44,5 +45,5 @@ http://127.0.0.1:8000/
 ```
 
 Develop changes in `VNNLIB-Solver-Database/website`, then synchronize the pages,
-shared CSS, and JavaScript here. Keep the root-site fallback path as
-`data/solvers.json` and refresh that snapshot from `VNNLIB-Solver-Database/data/solvers.json`.
+shared CSS, and JavaScript here. Preserve the external API configuration in
+`js/solvers.js`; no local solver data snapshot is required.
