@@ -609,7 +609,7 @@
         var target = $("active-filters");
         var items = activeFilterItems(query);
         if (!items.length) {
-            target.innerHTML = '<span class="active-filter-note">No filters selected. Showing the latest working version of each solver.</span>';
+            target.innerHTML = '<span class="active-filter-note">No filters selected.</span>';
             return;
         }
         target.innerHTML = items.map(function (item) {
@@ -715,7 +715,7 @@
             "<tr>",
             "<th>Solver</th>",
             "<th>Version</th>",
-            "<th>Supported VNN-LIB versions</th>",
+            "<th>VNN-LIB versions</th>",
             "<th>Link</th>",
             "<th></th>",
             "</tr>",
