@@ -1650,10 +1650,8 @@ main {
     border-radius: 8px;
     border-top: 4px solid var(--brand-plum);
     box-shadow: 0 16px 38px rgba(23,32,51,0.10);
-    display: flex;
     gap: 1rem;
     justify-content: space-between;
-    margin-top: 1.25rem;
     overflow: hidden;
     padding: 1.25rem;
     position: relative;
@@ -1679,6 +1677,7 @@ main {
     color: #ffffff;
     flex: 0 0 auto;
     font-weight: 800;
+    margin-top: 1rem;
     min-width: 13rem;
     padding: .75rem 1rem;
     transition: box-shadow .16s ease, color .16s ease, filter .16s ease, transform .16s ease;
@@ -2210,6 +2209,10 @@ main {
         position: relative;
         top: auto;
         z-index: 1;
+    }
+
+    #vnnlib-example-code {
+        padding-top: 30px;
     }
 }
 
