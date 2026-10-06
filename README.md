@@ -1,6 +1,7 @@
-# VNN-LIB Website Prototype
+# VNN-LIB Website
 
-This directory is the development version of the redesigned VNN-LIB website.
+This repository contains the VNN-LIB website, synchronized from
+`VNNLIB-Solver-Database/website`.
 It follows the client request to split the original single-page site into
 multiple pages:
 
@@ -11,8 +12,9 @@ multiple pages:
 - `related.html` for related tools
 
 All pages share `css/site.css` so the prototype presents as one consistent
-site. The Solvers page reads the local database at `../data/solvers.json`,
-shows matching solver releases in a table, and can be served as a static site.
+site. The Solvers page first requests `https://12er90.pythonanywhere.com/solvers`
+and falls back to `data/solvers.json`. It shows matching solver releases in a
+table and can be served as a static site.
 
 The current Solvers page filters in the browser so it can be developed and
 reviewed without a deployed server. The intended production integration is to
@@ -38,9 +40,9 @@ python -m http.server 8000
 Then open:
 
 ```text
-http://127.0.0.1:8000/website/
+http://127.0.0.1:8000/
 ```
 
-Keep feature work here first. Once the site is reviewed, copy the stable pages,
-shared CSS, and solver search JavaScript into the `vnnlib.github.io` repository
-for publication.
+Develop changes in `VNNLIB-Solver-Database/website`, then synchronize the pages,
+shared CSS, and JavaScript here. Keep the root-site fallback path as
+`data/solvers.json` and refresh that snapshot from `VNNLIB-Solver-Database/data/solvers.json`.

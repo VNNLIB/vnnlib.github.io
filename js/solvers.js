@@ -3,7 +3,7 @@
 
     var DATA_SOURCES = [
         "https://12er90.pythonanywhere.com/solvers",
-        "../data/solvers.json"
+        "data/solvers.json"
     ];
 
     var THEORY_FIELDS = [
