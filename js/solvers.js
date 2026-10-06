@@ -1,10 +1,7 @@
 (function () {
     "use strict";
 
-    var DATA_SOURCES = [
-        "https://12er90.pythonanywhere.com/solvers",
-        "../data/solvers.json"
-    ];
+    var DATA_SOURCE = "https://12er90.pythonanywhere.com/solvers";
 
     var THEORY_FIELDS = [
         "hidden_nodes",
@@ -30,17 +27,17 @@
     ];
 
     var FILTER_LABELS = {
-        text: "Search",
+        text: "Name",
         arithmetic: "Arithmetic",
-        hidden_nodes: "Hidden nodes",
-        multiple_io: "Input/output",
+        hidden_nodes: "Hidden",
+        multiple_io: "I/O",
         multiple_networks: "Networks",
-        node_comparisons: "Node comparisons",
-        operators: "ONNX operators",
-        element_types: "Element types",
-        serialise_assignments: "Serialise assignments",
-        onnx_opset: "Supported ONNX opset versions",
-        vnnlib_version: "Supported VNN-LIB versions"
+        node_comparisons: "Nodes",
+        operators: "ONNX",
+        element_types: "Elements",
+        serialise_assignments: "Assignments",
+        onnx_opset: "ONNX opset",
+        vnnlib_version: "VNN-LIB"
     };
 
     var VALUE_LABELS = {
@@ -72,6 +69,7 @@
     var state = {
         solvers: [],
         filtered: [],
+        operatorChoices: [],
         query: null
     };
 
@@ -135,6 +133,40 @@
         return value.split(",")
             .map(function (item) { return item.trim(); })
             .filter(Boolean);
+    }
+
+    function operatorInputState() {
+        var raw = $("filter-operators").value;
+        var parts = raw.split(",");
+        var known = {};
+        state.operatorChoices.forEach(function (operator) {
+            known[operator.toLowerCase()] = operator;
+        });
+        var lastRaw = parts.length ? parts[parts.length - 1] : "";
+        var last = lastRaw.trim();
+        var endsWithDelimiter = /,\s*$/.test(raw);
+        var selected = [];
+
+        parts.slice(0, -1).forEach(function (part) {
+            var value = part.trim();
+            if (known[value.toLowerCase()]) {
+                selected.push(known[value.toLowerCase()]);
+            }
+        });
+
+        if (last && known[last.toLowerCase()]) {
+            selected.push(known[last.toLowerCase()]);
+            last = "";
+        }
+
+        return {
+            selected: unique(selected),
+            search: endsWithDelimiter ? "" : last
+        };
+    }
+
+    function operatorSearchTerm() {
+        return operatorInputState().search.toLowerCase();
     }
 
     function valuesFromParams(params, field) {
@@ -337,7 +369,7 @@
             multiple_io: valuesFrom($("filter-multiple-io")),
             multiple_networks: valuesFrom($("filter-multiple-networks")),
             node_comparisons: valuesFrom($("filter-node-comparisons")),
-            operators: commaValues($("filter-operators").value),
+            operators: operatorInputState().selected,
             element_types: valuesFrom($("filter-element-types")),
             serialise_assignments: valuesFrom($("filter-serialise-assignments")),
             onnx_opset: $("filter-onnx-opset").value.trim(),
@@ -351,6 +383,7 @@
 
     function search() {
         syncAllPillGroups();
+        renderOperatorChoices();
         var query = currentQuery();
         state.query = query;
         updateUrl(query);
@@ -426,6 +459,16 @@
         }).join(", ");
     }
 
+    function theorySection(title, items, limit) {
+        if (!items || !items.length) {
+            return "";
+        }
+        return '<div class="solver-detail-group"><div class="solver-detail-label">' + escapeHtml(title)
+            + '</div><div class="solver-badges">'
+            + badges(items.map(function (item) { return VALUE_LABELS[item] || item; }), limit || 8)
+            + "</div></div>";
+    }
+
     function allOperators(solvers) {
         var seen = {};
         solvers.forEach(function (solver) {
@@ -458,10 +501,39 @@
 
     function populateOperatorSuggestions(solvers) {
         var operators = allOperators(solvers);
+        state.operatorChoices = unique(operators.concat(COMMON_ONNX_OPERATORS)).sort();
         $("operator-suggestions").innerHTML = operators.map(function (operator) {
             return '<option value="' + escapeHtml(operator) + '"></option>';
         }).join("");
-        $("operator-choices").innerHTML = operators.map(function (operator) {
+        renderOperatorChoices();
+    }
+
+    function addOperatorChoice(operator) {
+        var selected = operatorInputState().selected;
+        if (selected.indexOf(operator) === -1) {
+            selected.push(operator);
+        }
+        $("filter-operators").value = selected.join(", ");
+        $("filter-operators").dispatchEvent(new Event("input", { bubbles: true }));
+    }
+
+    function renderOperatorChoices() {
+        var inputState = operatorInputState();
+        var selected = {};
+        var term = operatorSearchTerm();
+        inputState.selected.forEach(function (operator) {
+            selected[operator] = true;
+        });
+        var matches = state.operatorChoices.filter(function (operator) {
+            return !selected[operator] && (!term || operator.toLowerCase().indexOf(term) !== -1);
+        });
+
+        if (!matches.length) {
+            $("operator-choices").innerHTML = '<div class="operator-empty">No ONNX operators match "' + escapeHtml(inputState.search) + '".</div>';
+            return;
+        }
+
+        $("operator-choices").innerHTML = matches.map(function (operator) {
             return '<button type="button" class="pill operator-choice" data-operator="' + escapeHtml(operator) + '">'
                 + escapeHtml(operator) + "</button>";
         }).join("");
@@ -560,25 +632,28 @@
         return [
             '<div class="solver-detail-panel">',
             '<div class="solver-section-title">Supported theories</div>',
-            '<div class="solver-badges">',
-            badges((capabilities.arithmetic || []).map(function (item) { return VALUE_LABELS[item] || item; }), 6),
-            badges((capabilities.hidden_nodes || []).map(function (item) { return VALUE_LABELS[item] || item; }), 4),
-            badges((capabilities.multiple_io || []).map(function (item) { return VALUE_LABELS[item] || item; }), 4),
-            badges((capabilities.multiple_networks || []).map(function (item) { return VALUE_LABELS[item] || item; }), 6),
-            badges((capabilities.node_comparisons || []).map(function (item) { return VALUE_LABELS[item] || item; }), 4),
+            '<div class="solver-detail-grid">',
+            theorySection("Arithmetic theories", capabilities.arithmetic, 6),
+            theorySection("Hidden nodes", capabilities.hidden_nodes, 4),
+            theorySection("Input/output", capabilities.multiple_io, 4),
+            theorySection("Networks", capabilities.multiple_networks, 6),
+            theorySection("Node comparisons", capabilities.node_comparisons, 4),
             "</div>",
-            '<div class="solver-section-title">Element types and assignments</div>',
+            '<div class="solver-section-title">Element types</div>',
             '<div class="solver-badges">',
-            badges((capabilities.element_types || []).map(function (item) { return "Type " + item; }), 6),
-            capabilities.serialise_assignments === undefined ? "" : badges(["Serialise assignments " + capabilities.serialise_assignments], 1),
+            badges((capabilities.element_types || []), 6),
+            "</div>",
+            '<div class="solver-section-title">Serialised assignments</div>',
+            '<div class="solver-badges">',
+            capabilities.serialise_assignments === undefined ? '<span class="solver-badge">Unknown</span>' : badges([String(capabilities.serialise_assignments)], 1),
             "</div>",
             '<div class="solver-section-title">Supported versions</div>',
             '<div class="solver-badges">',
             capabilities.vnnlib_versions ? '<span class="solver-badge">VNN-LIB ' + rangeText(capabilities.vnnlib_versions) + "</span>" : "",
             capabilities.onnx_opset ? '<span class="solver-badge">ONNX opset ' + rangeText(capabilities.onnx_opset) + "</span>" : "",
             "</div>",
-            '<div class="solver-section-title">Operators</div>',
-            '<div class="solver-operators"><div class="solver-badges">' + badges(operators, 40) + "</div></div>",
+            '<div class="solver-section-title">ONNX operators</div>',
+            '<div class="solver-badges solver-operators-list">' + badges(operators, 40) + "</div>",
             notes ? '<div class="solver-section-title">Notes</div><ul>' + notes + "</ul>" : "",
             errors ? '<div class="solver-section-title">Errors</div><ul>' + errors + "</ul>" : "",
             "</div>"
@@ -654,28 +729,18 @@
     }
 
     function loadData() {
-        var attempt = function (index) {
-            return fetch(DATA_SOURCES[index]).then(function (response) {
-                if (!response.ok) {
-                    throw new Error("HTTP " + response.status);
-                }
-                return response.json();
-            }).catch(function (error) {
-                if (index + 1 < DATA_SOURCES.length) {
-                    return attempt(index + 1);
-                }
-                throw error;
-            });
-        };
-
-        attempt(0).then(function (data) {
+        fetch(DATA_SOURCE).then(function (response) {
+            if (!response.ok) {
+                throw new Error("HTTP " + response.status);
+            }
+            return response.json();
+        }).then(function (data) {
             if (Array.isArray(data)) {
                 data = { solvers: data };
             }
             state.solvers = data.solvers || [];
             populateOperatorSuggestions(state.solvers);
             applyQueryFromUrl();
-            $("database-meta").textContent = "Database generated at " + (data.generated_at || "unknown time");
             search();
         }).catch(function (error) {
             $("solver-results").innerHTML = '<div class="solver-error">Could not load solver data: ' + error.message + "</div>";
@@ -700,8 +765,20 @@
             if (!choice) {
                 return;
             }
-            $("filter-operators").value = mergeCommaInput($("filter-operators").value, [choice.dataset.operator]);
-            $("filter-operators").dispatchEvent(new Event("input", { bubbles: true }));
+            addOperatorChoice(choice.dataset.operator);
+        });
+
+        $("filter-operators").addEventListener("keydown", function (event) {
+            var firstChoice;
+            if (event.key !== "Enter") {
+                return;
+            }
+            firstChoice = $("operator-choices").querySelector(".operator-choice");
+            if (!firstChoice) {
+                return;
+            }
+            event.preventDefault();
+            addOperatorChoice(firstChoice.dataset.operator);
         });
 
         [
@@ -725,7 +802,7 @@
             var file = event.target.files && event.target.files[0];
             var status = $("model-file-status");
             if (!file) {
-                status.textContent = "Upload an ONNX model or operator list.";
+                status.textContent = "Optional: upload an ONNX model or operator list to add detected operators to the filters.";
                 return;
             }
             file.arrayBuffer().then(function (buffer) {
@@ -752,7 +829,7 @@
             document.querySelectorAll(".solver-filter-panel input").forEach(function (input) {
                 input.value = "";
             });
-            $("model-file-status").textContent = "Upload an ONNX model or operator list.";
+            $("model-file-status").textContent = "Optional: upload an ONNX model or operator list to add detected operators to the filters.";
             search();
         });
     }

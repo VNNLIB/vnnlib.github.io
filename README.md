@@ -1,4 +1,49 @@
-VNN-LIB website
-===============
+# VNN-LIB Website
 
-The website for VNN-LIB. To edit simply open a PR updating the `index.html`.
+This repository contains the VNN-LIB website, synchronized from
+`VNNLIB-Solver-Database/website`.
+It follows the client request to split the original single-page site into
+multiple pages:
+
+- `index.html` for the homepage, introduction, latest news, and team members
+- `standards.html` for the documents page
+- `solvers.html` for solver capability search
+- `libraries.html` for VNN-LIB libraries
+- `related.html` for related tools
+
+All pages share `css/site.css` so the prototype presents as one consistent
+site. The Solvers page loads data exclusively from
+`https://12er90.pythonanywhere.com/solvers`. It shows matching solver releases
+in a table and can be served as a static site. There is no local data fallback;
+if the API request fails, the page displays a loading error.
+
+The current Solvers page filters in the browser and requires access to the
+external data API, including during local development. The intended production integration is to
+query the web API that wraps the Python compatibility package, while keeping
+the same filter fields and result structure.
+
+With no filters selected, the page shows every recorded solver release,
+including failed or non-conforming submissions. Capability filters only match
+releases that have a `capabilities` record; use the Status filter to inspect
+failed or incomplete records directly.
+
+The filter names mirror `vnnfilter.Query`: `onnx_opset`, `element_types`,
+`operators`, `vnnlib_version`, `hidden_nodes`, `multiple_io`,
+`multiple_networks`, `node_comparisons`, `arithmetic`,
+`optimised_disjunction`, and `serialise_assignments`.
+
+From the repository root:
+
+```bash
+python -m http.server 8000
+```
+
+Then open:
+
+```text
+http://127.0.0.1:8000/
+```
+
+Develop changes in `VNNLIB-Solver-Database/website`, then synchronize the pages,
+shared CSS, and JavaScript here. Preserve the external API configuration in
+`js/solvers.js`; no local solver data snapshot is required.
