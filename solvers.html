@@ -96,6 +96,19 @@
                                 </div>
                             </div>
 
+                            <div class="filter-block filter-block-model">
+                                <div class="filter-block-heading">
+                                    <span class="filter-accent filter-accent-plum"></span>
+                                    <h3>Model operator import</h3>
+                                </div>
+                                <label for="filter-model-file">Upload model operators</label>
+                                <input id="filter-model-file" class="form-control filter-control filter-file-control" type="file"
+                                    accept=".onnx,.json,.txt,.pb,.proto">
+                                <div id="model-file-status" class="filter-help">
+                                    Optional: upload an ONNX model or operator list to add detected operators to the filters.
+                                </div>
+                            </div>
+
                             <div class="filter-block">
                                 <div class="filter-block-heading">
                                     <span class="filter-accent filter-accent-amber"></span>
@@ -173,18 +186,6 @@
                                 </div>
                             </div>
 
-                            <div class="filter-block filter-block-model">
-                                <div class="filter-block-heading">
-                                    <span class="filter-accent filter-accent-plum"></span>
-                                    <h3>Model operator import</h3>
-                                </div>
-                                <label for="filter-model-file">Upload model operators</label>
-                                <input id="filter-model-file" class="form-control filter-control filter-file-control" type="file"
-                                    accept=".onnx,.json,.txt,.pb,.proto">
-                                <div id="model-file-status" class="filter-help">
-                                    Optional: upload an ONNX model or operator list to add detected operators to the filters.
-                                </div>
-                            </div>
                         </div>
                     </div>
 
