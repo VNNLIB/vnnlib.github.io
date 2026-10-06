@@ -440,6 +440,9 @@
         if (!pair || pair.length !== 2) {
             return "Unknown";
         }
+        if (pair[0] == pair[1]) {
+            return escapeHtml(pair[0]);
+        }
         return escapeHtml(pair[0]) + " to " + escapeHtml(pair[1]);
     }
 
