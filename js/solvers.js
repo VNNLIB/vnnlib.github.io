@@ -33,7 +33,7 @@
         multiple_io: "I/O",
         multiple_networks: "Networks",
         node_comparisons: "Nodes",
-        operators: "ONNX",
+        operators: "Operator",
         element_types: "Elements",
         serialise_assignments: "Assignments",
         onnx_opset: "ONNX opset",
@@ -41,20 +41,28 @@
     };
 
     var VALUE_LABELS = {
-        BND: "BND - variable bound comparisons",
-        OUTC: "OUTC - output comparisons",
-        LIN: "LIN - linear expressions",
-        POLY: "POLY - polynomial expressions",
-        NH: "NH - no hidden node declarations",
-        H: "H - hidden node declarations allowed",
-        SIO: "SIO - single input and output",
-        MIO: "MIO - multiple inputs or outputs",
-        SNET: "SNET - single network",
-        MENET: "MENET - multiple equal networks",
-        MINET: "MINET - multiple isomorphic networks",
-        MNET: "MNET - arbitrary multiple networks",
-        SNC: "SNC - no same-network node comparisons",
-        MNC: "MNC - node comparisons allowed"
+        BND: "BND - queries containing variable bounds",
+        OUTC: "OUTC - queries containing comparisons of output values",
+        LIN: "LIN - queries containing linear constraints",
+        POLY: "POLY - queries containing polynomial constraints",
+        NH: "NH - queries that do not reference hidden nodes",
+        H: "H - queries that reference hidden nodes",
+        SIO: "SIO - queries with networks with a single input and output",
+        MIO: "MIO - queries with networks with multiple inputs or outputs",
+        SNET: "SNET - queries with a single network",
+        MENET: "MENET - queries with multiple equal networks",
+        MINET: "MINET - queries with multiple isomorphic networks",
+        MNET: "MNET - queries with arbitrary multiple networks",
+        SNC: "SNC - a constraint can only reference one network node",
+        MNC: "MNC - a constraint can reference multiple network nodes"
+    };
+
+    var THEORY_SELECT_OPTIONS = {
+        "filter-arithmetic": ["BND", "OUTC", "LIN", "POLY"],
+        "filter-hidden-nodes": ["NH", "H"],
+        "filter-multiple-io": ["SIO", "MIO"],
+        "filter-multiple-networks": ["SNET", "MENET", "MINET", "MNET"],
+        "filter-node-comparisons": ["SNC", "MNC"]
     };
 
     var PILL_FIELDS = {
@@ -126,6 +134,22 @@
     function syncAllPillGroups() {
         Object.keys(PILL_FIELDS).forEach(function (field) {
             syncPillGroup(PILL_FIELDS[field]);
+        });
+    }
+
+    function populateTheorySelectOptions() {
+        Object.keys(THEORY_SELECT_OPTIONS).forEach(function (selectId) {
+            var select = $(selectId);
+            if (!select) {
+                return;
+            }
+            select.innerHTML = "";
+            THEORY_SELECT_OPTIONS[selectId].forEach(function (value) {
+                var option = document.createElement("option");
+                option.value = value;
+                option.textContent = VALUE_LABELS[value] || value;
+                select.appendChild(option);
+            });
         });
     }
 
@@ -656,7 +680,7 @@
             capabilities.onnx_opset ? '<span class="solver-badge">ONNX opset ' + rangeText(capabilities.onnx_opset) + "</span>" : "",
             "</div>",
             '<div class="solver-section-title">ONNX operators</div>',
-            '<div class="solver-badges solver-operators-list">' + badges(operators, 40) + "</div>",
+            '<div class="solver-badges solver-operators-list">' + badges(operators, 100) + "</div>",
             notes ? '<div class="solver-section-title">Notes</div><ul>' + notes + "</ul>" : "",
             errors ? '<div class="solver-section-title">Errors</div><ul>' + errors + "</ul>" : "",
             "</div>"
@@ -838,6 +862,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
+        populateTheorySelectOptions();
         bindEvents();
         loadData();
     });
