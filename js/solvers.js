@@ -1,7 +1,7 @@
 (function () {
     "use strict";
 
-    var DATA_SOURCE = "https://12er90.pythonanywhere.com/solvers";
+    var DATA_SOURCE = "https://matthewdaggitt.pythonanywhere.com/solvers";
 
     var THEORY_FIELDS = [
         "hidden_nodes",
